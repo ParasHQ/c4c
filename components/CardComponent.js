@@ -52,7 +52,7 @@ const CardComponent = ({
 		} else {
 			setTimeout(() => {
 				setIsTokenChange(false)
-			}, 8500)
+			}, 25500)
 		}
 	}, [isTokenChange])
 
@@ -94,8 +94,8 @@ const CardComponent = ({
 								src: '/favicon.ico',
 								x: null,
 								y: null,
-								height: 16,
-								width: 16,
+								height: 28,
+								width: 28,
 								excavate: true,
 							}}
 						/>
@@ -110,11 +110,7 @@ const CardComponent = ({
 					</div>
 				</div>
 			</div>
-			<div
-				className={`flex justify-center mt-8 ${
-					isTokenChange ? 'fadeIn' : 'fadeOut'
-				}`}
-			>
+			<div className={`flex justify-center mt-8 ${isTokenChange ? '' : ''}`}>
 				<div className="progress">
 					<div className="color"></div>
 				</div>

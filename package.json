@@ -6,8 +6,11 @@
     "start": "next start"
   },
   "dependencies": {
+    "axios": "^0.22.0",
+    "cache-manager": "^3.4.4",
     "cids": "^1.1.9",
     "jsbi": "^3.2.5",
+    "mongodb": "^4.1.3",
     "next": "latest",
     "qrcode.react": "^1.0.1",
     "react": "^17.0.2",

@@ -1,13 +1,25 @@
-import CardData from 'data/token.json'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import CardComponent from 'components/CardComponent'
 import ParasLogo from 'components/ParasLogo'
+import axios from 'axios'
 
 export default function Home() {
-	const [index, setIndex] = useState(400)
+	const [currentCard, setCurrentCard] = useState(null)
+	const [nextCard, setNextCard] = useState(null)
 
-	const updateCard = () => {
-		setIndex(index - 1)
+	useEffect(async () => {
+		const resCurrent = await axios.get('/api/card4card')
+		setCurrentCard(resCurrent.data[0])
+	}, [])
+
+	const updateCard = async () => {
+		if (nextCard) {
+			setCurrentCard(nextCard)
+		}
+
+		console.log('update card')
+		const resNext = await axios.get('/api/card4card')
+		setNextCard(resNext.data[0])
 	}
 
 	return (
@@ -25,10 +37,18 @@ export default function Home() {
 				<ParasLogo />
 			</div>
 			<div className="py-2 max-w-6xl m-auto z-10 w-full">
-				<div className="text-white text-center font-bold mb-4 text-2xl">
-					Join Card 4 Card Event
+				<div className="text-white text-center font-bold text-2xl">
+					FIND THE FINEST NFT ON PARAS
 				</div>
-				<CardComponent token={CardData[index]} updateCard={updateCard} />
+				<p className="text-white text-center mb-4 text-lg">
+					Special on #card4card, get highest edition NFTs with low prices
+				</p>
+				{currentCard && (
+					<CardComponent
+						token={currentCard.token_series}
+						updateCard={updateCard}
+					/>
+				)}
 			</div>
 		</div>
 	)
