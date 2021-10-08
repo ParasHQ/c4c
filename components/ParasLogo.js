@@ -1,6 +1,6 @@
 const ParasLogo = () => (
 	<svg
-		className="cursor-pointer hidden md:block"
+		className="cursor-pointer md:block"
 		width="80"
 		height="19"
 		viewBox="0 0 80 19"

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import CardComponent from 'components/CardComponent'
 import ParasLogo from 'components/ParasLogo'
 import axios from 'axios'
+import Head from 'next/head'
 
 export default function Home() {
 	const [currentCard, setCurrentCard] = useState(null)
@@ -23,7 +24,42 @@ export default function Home() {
 	}
 
 	return (
-		<div className="bg-black h-screen flex flex-col items-center justify-center py-4">
+		<div className="bg-black md:h-screen flex flex-col items-center justify-center py-4">
+			<Head>
+				<title>Paras Card for Card</title>
+				<meta
+					name="description"
+					content="Create, Trade and Collect. All-in-one social digital art cards marketplace for creators and collectors."
+				/>
+
+				<meta name="twitter:title" content="Paras — Digital Art Cards Market" />
+				<meta name="twitter:card" content="summary_large_image" />
+				<meta name="twitter:site" content="@ParasHQ" />
+				<meta name="twitter:url" content="https://paras.id" />
+				<meta
+					name="twitter:description"
+					content="Create, Trade and Collect. All-in-one social digital art cards marketplace for creators and collectors."
+				/>
+				<meta
+					name="twitter:image"
+					content="https://paras-media.s3-ap-southeast-1.amazonaws.com/paras-v2-twitter-card-large.png"
+				/>
+				<meta property="og:type" content="website" />
+				<meta property="og:title" content="Paras — Digital Art Cards Market" />
+				<meta
+					property="og:site_name"
+					content="Paras — Digital Art Cards Market"
+				/>
+				<meta
+					property="og:description"
+					content="Create, Trade and Collect. All-in-one social digital art cards marketplace for creators and collectors."
+				/>
+				<meta property="og:url" content="https://c4c.paras.id" />
+				<meta
+					property="og:image"
+					content="https://paras-media.s3-ap-southeast-1.amazonaws.com/paras-v2-twitter-card-large.png"
+				/>
+			</Head>
 			<div
 				className="fixed inset-0 opacity-75"
 				style={{
@@ -36,7 +72,7 @@ export default function Home() {
 			<div className="z-10">
 				<ParasLogo />
 			</div>
-			<div className="py-2 max-w-6xl m-auto z-10 w-full">
+			<div className="p-8 max-w-6xl m-auto z-10 w-full">
 				<div className="text-white text-center font-bold text-2xl">
 					FIND THE FINEST NFT ON PARAS
 				</div>

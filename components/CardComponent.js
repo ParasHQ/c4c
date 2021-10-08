@@ -59,11 +59,11 @@ const CardComponent = ({
 	return (
 		<>
 			<div
-				className={`flex justify-center items-center h-full w-full ${
+				className={`md:flex justify-center items-center h-full w-full ${
 					isTokenChange ? 'fadeIn' : 'fadeOut'
 				}`}
 			>
-				<div className="w-1/3">
+				<div className="md:w-1/3">
 					<Card
 						imgUrl={parseImgUrl(token.metadata.media, null, {
 							width: `600`,
@@ -78,7 +78,7 @@ const CardComponent = ({
 						}}
 					/>
 				</div>
-				<div className="w-1/2 pl-12">
+				<div className="md:w-1/2 mt-8 md:mt-0 md:pl-12">
 					<p className="text-white font-bold text-4xl">
 						{token.metadata.title}
 					</p>
@@ -86,7 +86,7 @@ const CardComponent = ({
 						by {token.metadata.creator_id}
 					</p>
 					<p className="text-white opacity-80">{token.metadata.description}</p>
-					<div className="flex mt-8 bg-gray-900 p-2 rounded-lg items-center flex-grow-0 w-2/3">
+					<div className="flex mt-8 bg-gray-900 p-2 rounded-lg items-center flex-grow-0 md:w-2/3">
 						<QRCode
 							size={128}
 							value={`https://paras.id/token/${token.contract_id}::${token.token_series_id}`}
