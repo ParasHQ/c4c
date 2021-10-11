@@ -94,8 +94,8 @@ const CardComponent = ({
 								src: '/favicon.ico',
 								x: null,
 								y: null,
-								height: 28,
-								width: 28,
+								height: 18,
+								width: 18,
 								excavate: true,
 							}}
 						/>
