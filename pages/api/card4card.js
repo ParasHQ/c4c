@@ -9,7 +9,7 @@ export default async function card4cardAPI(req, res) {
 	const tokenCategories = await db.root
 		.collection('token_categories')
 		.aggregate([
-			{ $match: { status: 'accepted', category_id: 'card4card' } },
+			{ $match: { status: 'accepted', category_id: 'card4card-oct-21' } },
 			{ $sample: { size: 1 } },
 			{
 				$lookup: {

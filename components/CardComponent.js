@@ -102,7 +102,11 @@ const CardComponent = ({
 						<div className="ml-4">
 							<p className="text-white font-bold text-2xl">
 								{token.price
-									? `Buy for ${prettyBalance(token.price, 24, 4)} Ⓝ`
+									? `Buy for ${prettyBalance(
+											token.price.$numberDecimal,
+											24,
+											4
+									  )} Ⓝ`
 									: `See details`}
 							</p>
 							<p className="text-white">Scan Here</p>
